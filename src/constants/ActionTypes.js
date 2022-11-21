@@ -1,0 +1,3 @@
+export const GET_ALL_JOKES = 'GET_ALL_JOKES';
+export const GET_CATEGORIES = 'GET_CATEGORIES';
+export const GET_FILTER_JOKES = 'GET_FILTER_JOKES';
