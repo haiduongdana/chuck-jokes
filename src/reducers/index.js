@@ -5,6 +5,7 @@ import {
 
 const initialState = {
     allJokes: [],
+    isFetching: true,
     categories: [],
     filterJokes: [],
 }
@@ -16,6 +17,7 @@ const jokeReducer = (state = initialState, action) => {
                 ...state,
                 allJokes:action.payload,
                 filterJokes: action.payload,
+                isFetching: false,
             }
         case GET_CATEGORIES:
             return {
