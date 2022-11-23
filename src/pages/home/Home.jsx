@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { getAllJokes, getCategories, getFilterJokes } from "../../actions";
+import {
+  chooseJoke,
+  getAllJokes,
+  getCategories,
+  getFilterJokes,
+} from "../../actions";
 import { connect } from "react-redux";
 import JokeList from "../../components/joke/JokeList";
 import JokeItem from "../../components/joke/JokeItem";
@@ -12,6 +17,7 @@ const Home = ({
   getAllJokes,
   getCategories,
   getFilterJokes,
+  chooseJoke,
 }) => {
   const isEmpty = filterJokes.length === 0;
   let [count, setCount] = useState(5);
@@ -52,13 +58,14 @@ const Home = ({
         ) : (
           filterJokes
             .slice(0, count)
-            .map((joke) => <JokeItem key={joke.id} joke={joke} />)
+            .map((joke) => (
+              <JokeItem key={joke.id} handleClick={chooseJoke} joke={joke} />
+            ))
         )}
       </JokeList>
       <button
         onClick={() => {
           if (count < filterJokes.length) {
-            console.log("Ok");
             setCount((count += 6));
           }
         }}
@@ -82,6 +89,7 @@ const mapDispatchToProps = (dispatch) => {
     getAllJokes: () => dispatch(getAllJokes()),
     getCategories: () => dispatch(getCategories()),
     getFilterJokes: (category) => dispatch(getFilterJokes(category)),
+    chooseJoke: (joke) => dispatch(chooseJoke(joke)),
   };
 };
 
