@@ -49,6 +49,7 @@ const JokeDetail = ({ joke }) => {
   if (joke != null) {
     return (
       <>
+        <h3>{joke.id}</h3>
         {joke.value}
         <div className={style.actions}>
           <button
