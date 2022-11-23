@@ -88,6 +88,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
+  font-family: 'Montserrat', sans-serif;
   font: inherit;
   vertical-align: baseline;
 }
@@ -130,4 +131,72 @@ table {
 
 * {
   box-sizing: border-box;
+}
+
+.categories_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45px;
+  max-width: 1320px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.categories_btn {
+  width: 20%;
+  background-color: red;
+  border: none;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 16px;
+  line-height: 1.43;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+
+}
+
+.joke-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 81px;
+  padding: 0 20px;
+
+}
+
+.joke-item-container {
+  width: calc(100%/3);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 38px;
+}
+
+.joke-item {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  height: 155px;
+  border: 1px solid #b2b2b2;
+  padding: 16px;
+  font-size: 16px;
+}
+
+.joke-item:hover {
+  box-shadow: 0 1px 7px 0 rgba(0,0,0,0.15);
+}
+
+.joke-link {
+  text-decoration: none;
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
 }

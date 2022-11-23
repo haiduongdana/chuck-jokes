@@ -6,6 +6,8 @@ import {
   getFilterJokes,
 } from "../../actions";
 import { connect } from "react-redux";
+import "./home.module.scss";
+//import "./home.module.scss";
 import JokeList from "../../components/joke/JokeList";
 import JokeItem from "../../components/joke/JokeItem";
 import Loading from "../../components/loading/Loading";
@@ -34,17 +36,17 @@ const Home = ({
 
   return (
     <>
-      <div className="categories-list">
+      <div className="categories_list">
         {categories.map((category) => (
           <button
             key={category.value}
             onClick={() => getJokes(category.value)}
-            className="categories-btn"
+            className= "categories_btn"
           >
             {category.name}
           </button>
         ))}
-        <button className="categories-btn" onClick={() => getJokes("all")}>
+        <button className="categories_btn" onClick={() => getJokes("all")}>
           VIEW ALL
         </button>
       </div>
@@ -70,8 +72,9 @@ const Home = ({
           }
         }}
       >
-        Show more
+        View more
       </button>
+
     </>
   );
 };
