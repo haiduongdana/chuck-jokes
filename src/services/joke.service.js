@@ -2,21 +2,21 @@ import axios from "axios";
 
 const API_URL = "https://api.chucknorris.io/jokes";
 
-const getAll = () => {
-    return axios.get(API_URL + '/search', {
-        params: {
-            query: 'all'
-        }
-    });
-}
+const getJokes = (input = "all") => {
+  return axios.get(API_URL + "/search", {
+    params: {
+      query: input,
+    },
+  });
+};
 
 const getCategories = () => {
-    return axios.get(API_URL + '/categories')
-}
+  return axios.get(API_URL + "/categories");
+};
 
 const JokeService = {
-    getAll,
-    getCategories,
-}
+  getJokes,
+  getCategories,
+};
 
 export default JokeService;

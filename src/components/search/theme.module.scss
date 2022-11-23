@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+}
+
+.input {
+  width: 300px;
+}
+
+.suggestion {
+  padding: 10px 0;
+}
+
+.suggestionsContainerOpen {
+  position: absolute;
+  padding: 10px;
+  background-color: white;
+  border-radius: 6px;
+  width: 300px;
+  max-height: 350px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.suggestionsContainerOpen::-webkit-scrollbar {
+  width: 2px;
+}
+.suggestionHighlighted {
+  background-color: #f0f0f0;
+}
