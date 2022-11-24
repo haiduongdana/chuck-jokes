@@ -1,9 +1,91 @@
-.categories-btn {
-    background-color: red !important;
-    padding: 14px 0;
-    max-width: 206px;
+.categories_list {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 45px;
+    max-width: 1140px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+    .categories_container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: -10px;
+        margin-right: -10px;
+        
+        .view_all {
+            .categories_btn {
+                position: relative;
+                background-color: #ffffff !important;  
+                color: #cfb995 !important;  
+                border: 1px solid #cfb995 !important;
+            }
+        }
+
+        .categories_item {
+            width: 20%;
+            padding-left: 10px;
+            padding-right: 10px;    
+
+            .categories_btn {
+                width: 100%;
+                box-sizing: border-box;
+                border: none;
+                border-radius: 2px;
+                padding-top: 14px;
+                padding-bottom: 14px;
+                margin-top: 16px;
+                line-height: 1.43;
+                font-size: 14px;
+                font-weight: 600;
+                color: #fff;
+            }
+        }
+    }
 }
 
-.joke-list {
-    background-color: #000;
+.joke_container {
+    max-width: 1140px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.view_more {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 26px;
+    margin-bottom: 58px;
+
+    button {
+        position: relative;
+        width: 206px;
+        text-transform: uppercase;
+        box-sizing: border-box;
+        border-radius: 2px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        line-height: 1.43;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: #ffffff ;  
+        color: #cfb995;  
+        border: 1px solid #cfb995; 
+    }
+}
+
+.arrowDown {
+    position: absolute;
+    height: 16px;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+  
+  

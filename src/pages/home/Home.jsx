@@ -6,11 +6,11 @@ import {
   getFilterJokes,
 } from "../../actions";
 import { connect } from "react-redux";
-import "./home.module.scss";
-//import "./home.module.scss";
+import style from "./home.module.scss";
 import JokeList from "../../components/joke/JokeList";
 import JokeItem from "../../components/joke/JokeItem";
 import Loading from "../../components/loading/Loading";
+import arrowDown from "../../assets/images/path-copy-7@3x.png";
 
 const Home = ({
   filterJokes,
@@ -34,47 +34,61 @@ const Home = ({
     getFilterJokes(category);
   };
 
+  const color = ["#00FFFF", "#7FFFD4", "#0000FF", "#8A2BE2", "#A52A2A", "#5F9EA0", "#7FFF00", "#FF7F50", "#6495ED", "#DC143C", "#008B8B", "#006400", "#8B008B", "#FF1493", "#00BFFF", "#B22222", "#FFD700", "#008000", "#ADFF2F", "#4B0082" ];
+  
   return (
     <>
-      <div className="categories_list">
-        {categories.map((category) => (
-          <button
-            key={category.value}
-            onClick={() => getJokes(category.value)}
-            className= "categories_btn"
-          >
-            {category.name}
-          </button>
-        ))}
-        <button className="categories_btn" onClick={() => getJokes("all")}>
-          VIEW ALL
-        </button>
+      <div className={style.categories_list}>
+        <div className={style.categories_container}>
+          {categories.map((category, index) => (            
+            <div className={style.categories_item}>
+              <button
+                key={category.value}
+                onClick={() => getJokes(category.value)}
+                className= {style.categories_btn}
+                style={{backgroundColor: color[index]}}
+              >
+                {category.name}
+              </button>
+            </div>
+          ))}
+          <div className={style.categories_item + " " + style.view_all}>
+            <button className={style.categories_btn} onClick={() => getJokes("all")}>
+              VIEW ALL
+              <img className={style.arrowDown} src={arrowDown} alt="arrowDown" />
+            </button>
+          </div>
+        </div>
       </div>
-      <JokeList>
-        {isEmpty ? (
-          isFetching ? (
-            <Loading />
+      <div className={style.joke_container}>
+        <JokeList>
+          {isEmpty ? (
+            isFetching ? (
+              <Loading />
+            ) : (
+              <p>Empty</p>
+            )
           ) : (
-            <p>Empty</p>
-          )
-        ) : (
-          filterJokes
-            .slice(0, count)
-            .map((joke) => (
-              <JokeItem key={joke.id} handleClick={chooseJoke} joke={joke} />
-            ))
-        )}
-      </JokeList>
-      <button
-        onClick={() => {
-          if (count < filterJokes.length) {
-            setCount((count += 6));
-          }
-        }}
-      >
-        View more
-      </button>
-
+            filterJokes
+              .slice(0, count)
+              .map((joke) => (
+                <JokeItem key={joke.id} handleClick={chooseJoke} joke={joke} />
+              ))
+          )}
+        </JokeList>
+        <div className={style.view_more}>
+          <button
+            onClick={() => {
+              if (count < filterJokes.length) {
+                setCount((count += 6));
+              }
+            }}
+          >
+            View more
+            <img className={style.arrowDown} src={arrowDown} alt="arrowDown" />
+          </button>
+        </div>
+      </div>          
     </>
   );
 };

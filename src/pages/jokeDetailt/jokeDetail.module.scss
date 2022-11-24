@@ -9,3 +9,33 @@
 .disliked {
   background-color: red;
 }
+
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+
+  .detail_content {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.return_btn {
+  margin-top: 46px;
+  margin-bottom: 48px;
+
+  button {
+    border: none;
+    background-color: #fff;
+    height: 61px;
+    padding: 0;
+
+    img {
+      height: 100%;
+    }
+  }
+}

@@ -1,6 +1,8 @@
+import style from "./jokeItem.module.scss"
+
 const JokeList = ({children}) => {
     return (
-        <div className="joke-list">
+        <div className={style.joke_list}>
             {children}
         </div>
     )
