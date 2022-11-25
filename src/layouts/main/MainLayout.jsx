@@ -5,7 +5,6 @@ import arrowDownFull from "../../assets/images/path_2@3x.png";
 import person from "../../assets/images/shape@3x.png";
 import { useState } from "react";
 import className from "classnames";
-import useOutsideClick from "../../hooks/click_outside_hook";
 const MainLayout = () => {
   //Dropdown status
   let [show, setShow] = useState(true);
