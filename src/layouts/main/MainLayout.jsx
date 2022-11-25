@@ -8,7 +8,7 @@ import className from "classnames";
 import useOutsideClick from "../../hooks/click_outside_hook";
 const MainLayout = () => {
   //Dropdown status
-  let [show, setShow] = useState(false);
+  let [show, setShow] = useState(true);
   return (
     <>
       <div className={style.banner}>
