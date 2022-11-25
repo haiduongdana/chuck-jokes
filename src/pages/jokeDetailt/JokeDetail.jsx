@@ -6,7 +6,7 @@ import arrowLeft from "../../assets/images/arrow-left@3x.png";
 import arrowRight from "../../assets/images/arrow-right@3x.png";
 import returnArrow from "../../assets/images/returnArrow.png";
 import { useEffect, useState } from "react";
-import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 
 const JokeDetail = ({ joke }) => {
   // fake joke like and dislike
@@ -16,7 +16,6 @@ const JokeDetail = ({ joke }) => {
   // status each time like or dislike
   let [status, setStatus] = useState(0);
 
-  let cx = classNames.bind(style);
   useEffect(() => {
     setStatus(0);
   }, [joke]);
@@ -55,7 +54,7 @@ const JokeDetail = ({ joke }) => {
         <div className={style.container + " " + style.return_btn}>
           <button>
             <img src={returnArrow} alt="" />
-          </button>          
+          </button>
         </div>
         <section className={style.container}>
           <div className={style.detail_content}>
@@ -72,41 +71,33 @@ const JokeDetail = ({ joke }) => {
                 <div className={style.joke_content}>
                   <h3>{joke.id}</h3>
                   <p>{joke.value}</p>
-                </div>                
+                </div>
               </div>
-              
+
               <div className={style.actions}>
                 <button
                   onClick={() => handleAction("LIKE")}
                   className={style.btn_like}
                 >
                   <img src={likeIcon} alt="" />
-                  <span>
-                    {like}
-                  </span>
+                  <span>{like}</span>
                 </button>
                 <button
                   className={style.btn_disliked}
                   onClick={() => handleAction("DISLIKE")}
                 >
                   <img src={dislikeIcon} alt="" />
-                  <span>
-                    {dislike}
-                  </span>
+                  <span>{dislike}</span>
                 </button>
               </div>
 
               <div className={style.changeJoke}>
                 <button className={style.prev_btn}>
                   <img src={arrowLeft} alt="" />
-                  <span>
-                    Prev Joke
-                  </span>
+                  <span>Prev Joke</span>
                 </button>
                 <button className={style.next_btn}>
-                  <span>
-                    Next Joke
-                  </span>
+                  <span>Next Joke</span>
                   <img src={arrowRight} alt="" />
                 </button>
               </div>
@@ -114,16 +105,16 @@ const JokeDetail = ({ joke }) => {
 
             <div className={style.top_jokes}>
               <h5>The top 10 Jokes this week</h5>
-              <a href="#">Smoking Joke</a>
-              <a href="#">Smoking Joke</a>
-              <a href="#">Smoking Joke</a>
-              <a href="#">Smoking Joke</a>
-              <a href="#">Smoking Joke</a>
-              <a href="#">Smoking Joke</a>
-              <a href="#">Smoking Joke</a>
-              <a href="#">Smoking Joke</a>
-              <a href="#">Smoking Joke</a>
-              <a href="#">Smoking Joke</a>            
+              <Link href="#">Smoking Joke</Link>
+              <Link href="#">Smoking Joke</Link>
+              <Link href="#">Smoking Joke</Link>
+              <Link href="#">Smoking Joke</Link>
+              <Link href="#">Smoking Joke</Link>
+              <Link href="#">Smoking Joke</Link>
+              <Link href="#">Smoking Joke</Link>
+              <Link href="#">Smoking Joke</Link>
+              <Link href="#">Smoking Joke</Link>
+              <Link href="#">Smoking Joke</Link>
             </div>
           </div>
         </section>
