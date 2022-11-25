@@ -34,7 +34,7 @@
             font-size: 14px;
             color: #303030;
             margin: 6px 0 32px;
-            height: 154px;
+            // height: 154px;
             font-weight: normal;
             font-stretch: normal;
             font-style: normal;
@@ -74,4 +74,24 @@
     margin-top: 81px;
     margin-left: -10px;
     margin-right: -10px;  
+}
+
+@media only screen and (min-width: 992px){
+    .joke_item_container {
+        p{
+            height: 154px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+    .joke_item_container {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .joke_item_container {
+        width: 100%;
+    }
 }

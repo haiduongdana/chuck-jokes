@@ -59,25 +59,26 @@ const JokeDetail = ({ joke }) => {
         </div>
         <section className={style.container}>
           <div className={style.detail_content}>
-            <div>
-              <div>
-                <div>
-                  <span>• Social Jokes</span>
+            <div className={style.detail_main}>
+              <div className={style.detail_static}>
+                <div className={style.detail_header}>
+                  <div>
+                    <span>• Social Jokes</span>
+                  </div>
+                  <div>
+                    <span>• Trending</span>
+                  </div>
                 </div>
-                <div>
-                  <span>• Trending</span>
-                </div>
-
-              </div>
-              <div className={style.joke_content}>
-                <h3>{joke.id}</h3>
-                <p>{joke.value}</p>
+                <div className={style.joke_content}>
+                  <h3>{joke.id}</h3>
+                  <p>{joke.value}</p>
+                </div>                
               </div>
               
               <div className={style.actions}>
                 <button
                   onClick={() => handleAction("LIKE")}
-                  className={cx({ action_button: true, like: status === 1 })}
+                  className={style.btn_like}
                 >
                   <img src={likeIcon} alt="" />
                   <span>
@@ -85,7 +86,7 @@ const JokeDetail = ({ joke }) => {
                   </span>
                 </button>
                 <button
-                  className={cx({ action_button: true, disliked: status === -1 })}
+                  className={style.btn_disliked}
                   onClick={() => handleAction("DISLIKE")}
                 >
                   <img src={dislikeIcon} alt="" />
@@ -96,13 +97,13 @@ const JokeDetail = ({ joke }) => {
               </div>
 
               <div className={style.changeJoke}>
-                <button>
+                <button className={style.prev_btn}>
                   <img src={arrowLeft} alt="" />
                   <span>
                     Prev Joke
                   </span>
                 </button>
-                <button>
+                <button className={style.next_btn}>
                   <span>
                     Next Joke
                   </span>
@@ -111,7 +112,7 @@ const JokeDetail = ({ joke }) => {
               </div>
             </div>
 
-            <div>
+            <div className={style.top_jokes}>
               <h5>The top 10 Jokes this week</h5>
               <a href="#">Smoking Joke</a>
               <a href="#">Smoking Joke</a>
