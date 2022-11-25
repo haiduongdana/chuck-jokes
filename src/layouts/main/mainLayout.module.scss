@@ -130,17 +130,23 @@
           position: absolute;
           top: 60px;
           border-radius: 5px;
+          width: 100%;
+		  left: 0;
           a,
           span {
             color: #000;
+            margin: 0;
           }
           .menu_item_expand {
             border-radius: 5px;
             background-color: white;
 
-            > div > .personIcon {
+            > div > img {
               display: none;
             }
+          }
+          li:hover {
+          	background-color: #cfb995;
           }
         }
       }
