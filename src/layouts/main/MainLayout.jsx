@@ -43,10 +43,3 @@ const MainLayout = () => (
   </>
 );
 export default MainLayout;
-
-let btnMenu = document.querySelector(".navbar_container .navbar .header_menu .menu_btn");
-let currentMenu = document.querySelector(".navbar_container .navbar .header_menu .menu_list");
-
-btnMenu.addEventListener("click", () =>{
-    currentMenu.classList.toggle("show");
-})
